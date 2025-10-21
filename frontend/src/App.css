@@ -1,5 +1,3 @@
-/* App.css */
-
 .App {
   min-height: 100vh;
 }
@@ -17,12 +15,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Se você quiser adicionar um estilo global para todos os botões */
 button {
   font-family: inherit;
 }
 
-/* Classe utilitária para centralizar conteúdo */
 .container {
   max-width: 1200px;
   margin: 0 auto;

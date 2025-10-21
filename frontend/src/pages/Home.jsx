@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Users,
   Book,
@@ -7,13 +8,14 @@ import {
   Send,
   RotateCcw,
   List,
-} from "lucide-react"; // Importa ícones da biblioteca lucide-react
-import Header from "../components/Header"; // Importação do componente Header
-import Footer from "../components/Footer"; // Importação do componente Footer
-import "../styles/Home.css"; // CSS específico da Home
+} from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import "../styles/Home.css";
 
 const Home = () => {
-  // Dados de estatísticas do sistema
+  const navigate = useNavigate();
+
   const stats = [
     { number: "1,247", label: "Livros Cadastrados", Icon: Book },
     { number: "89", label: "Livros Emprestados", Icon: BookOpen },
@@ -21,35 +23,37 @@ const Home = () => {
     { number: "156", label: "Empréstimos Hoje", Icon: Users },
   ];
 
-  // Dados para as ações rápidas
   const quickActions = [
     {
       title: "Cadastrar Livro",
       description: "Adicione novos livros ao acervo",
       Icon: Plus,
       color: "#4CAF50",
+      path: "/cadastrar-livro",
     },
     {
       title: "Fazer Empréstimo",
       description: "Empreste um livro informando nome e código do usuário",
       Icon: Send,
       color: "#FF9800",
+      path: "/fazer-emprestimo",
     },
     {
       title: "Processar Devolução",
       description: "Registre a devolução de livros",
       Icon: RotateCcw,
       color: "#9C27B0",
+      path: "/processar-devolucao",
     },
     {
       title: "Ver Empréstimos",
       description: "Consulte todos os empréstimos ativos",
       Icon: List,
       color: "#2196F3",
+      path: "/ver-emprestimos",
     },
   ];
 
-  // Livros adicionados recentemente (Começo com dados fictícios)
   const recentBooks = [
     { title: "Dom Casmurro", author: "Machado de Assis", code: "LIV001" },
     { title: "O Cortiço", author: "Aluísio Azevedo", code: "LIV002" },
@@ -60,7 +64,6 @@ const Home = () => {
     <div className="home-container">
       <Header />
 
-      {/* Seção de Estatísticas */}
       <section>
         <h2>Estatísticas do Sistema</h2>
         <div className="stats-grid">
@@ -68,7 +71,7 @@ const Home = () => {
             <div
               key={index}
               className="stat-card"
-              style={{ animationDelay: `${(index + 1) * 0.1}s` }} // Delay da animação para cada card
+              style={{ animationDelay: `${(index + 1) * 0.1}s` }}
             >
               <div className="stat-icon">
                 <stat.Icon size={48} />
@@ -82,7 +85,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção de Ações Rápidas */}
       <section className="actions-section">
         <h2>Ações Rápidas</h2>
         <div className="actions-grid">
@@ -90,21 +92,24 @@ const Home = () => {
             <div
               key={index}
               className="action-card"
-              style={{ "--accent-color": action.color }} // Cor personalizada do card
+              style={{ "--accent-color": action.color }}
             >
               <div className="action-icon">
-                <action.Icon size={48} /> {/* Ícone da ação */}
+                <action.Icon size={48} />
               </div>
-              <h3>{action.title}</h3> {/* Título da ação */}
-              <p>{action.description}</p> {/* Descrição */}
-              <button className="action-button">Acessar</button>{" "}
-              {/* Botão sem funcionalidade por enquanto */}
+              <h3>{action.title}</h3>
+              <p>{action.description}</p>
+              <button
+                className="action-button"
+                onClick={() => navigate(action.path)}
+              >
+                Acessar
+              </button>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Seção de Livros Recentes */}
       <section className="recent-section">
         <h2>Livros Adicionados Recentemente</h2>
         <div className="recent-books">
@@ -127,7 +132,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Rodapé */}
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
-import { Book, Calendar } from "lucide-react"; // Ícones
-import "../styles/Header.css"; // CSS do Header
+import { Book, Calendar } from "lucide-react";
+import "../styles/Header.css";
 
 const Header = () => {
   return (
