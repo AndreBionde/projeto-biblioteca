@@ -9,7 +9,6 @@
   position: relative;
 }
 
-/* Textura sutil no header */
 .header::before {
   content: "";
   position: absolute;
@@ -83,7 +82,6 @@
   opacity: 0.9;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;

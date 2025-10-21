@@ -1,0 +1,67 @@
+.emprestimo-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8b4513 0%, #d2b48c 50%, #f4a460 100%);
+  font-family: "Georgia", "Times New Roman", serif;
+  position: relative;
+}
+
+.emprestimo-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(139, 69, 19, 0.1) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.emprestimo-form {
+  background: linear-gradient(145deg, #f5e6d3, #e8d5c2);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(62, 39, 35, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.info-box {
+  background: rgba(139, 69, 19, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #8b4513;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-box svg {
+  color: #8b4513;
+}
+
+.info-box h3 {
+  color: #5d4037;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .emprestimo-form {
+    padding: 1.5rem;
+  }
+
+  .info-box {
+    padding: 0.75rem 1rem;
+  }
+
+  .info-box h3 {
+    font-size: 1.1rem;
+  }
+}
