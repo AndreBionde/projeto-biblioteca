@@ -3,6 +3,7 @@ import { Send, User, BookOpen } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/FazerEmprestimos.css";
+import BackButton from "../components/BackButton";
 
 const FazerEmprestimo = () => {
   const [formData, setFormData] = useState({
@@ -97,6 +98,7 @@ const FazerEmprestimo = () => {
       <Header />
 
       <section className="form-section">
+        <BackButton />
         <div className="form-header">
           <Send size={40} />
           <h2>Realizar Empréstimo</h2>

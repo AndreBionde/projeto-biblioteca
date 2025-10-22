@@ -3,6 +3,7 @@ import { Book, Save, X } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/CadastrarLivro.css";
+import BackButton from "../components/BackButton";
 
 const CadastrarLivro = () => {
   const [formData, setFormData] = useState({
@@ -91,6 +92,7 @@ const CadastrarLivro = () => {
       <Header />
 
       <section className="form-section">
+        <BackButton />
         <div className="form-header">
           <Book size={40} />
           <h2>Cadastrar Novo Livro</h2>
